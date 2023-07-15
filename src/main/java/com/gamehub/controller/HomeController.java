@@ -101,16 +101,13 @@ public class HomeController {
 		if(!ingresado) {
 			detalles.add(detalleOrden);
 		}
-		
-		
-		
+			
 		sumaTotal=detalles.stream().mapToDouble(dt->dt.getTotal()).sum();
 		
 		orden.setTotal(sumaTotal);
 		model.addAttribute("cart", detalles);
 		model.addAttribute("orden", orden);
-		
-		
+			
 		return "usuario/carrito";
 	}
 	
